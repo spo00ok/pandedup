@@ -1,0 +1,127 @@
+{
+  "source_repository": "https://github.com/PaloAltoNetworks/pan-os-php",
+  "commit": "d87de874a289eca673dcdfa13903dd9a3e00f2d8",
+  "original_samples": [
+    {
+      "file": "panorama-example.xml",
+      "upstream_path": "examples/sample-configs/panorama-example.xml",
+      "sha256": "e9e92a1e7b93d6996f639f3904dbdb95691c689a34efa96f1210eb53244908c9",
+      "config_version": "6.0.0",
+      "analysis": {
+        "eligible_objects": 9,
+        "duplicate_groups": 0,
+        "needs_review": 0,
+        "skipped_types": {},
+        "issues": 0
+      },
+      "replacement": {
+        "changed_lists": 0,
+        "replacements": 0,
+        "collapsed_members": 0,
+        "skipped": 15
+      },
+      "hierarchy_complete": false
+    },
+    {
+      "file": "panorama-10.0-merger.xml",
+      "upstream_path": "tests/input/panorama-10.0-merger.xml",
+      "sha256": "7865d9a1c04fcf5493f2d5f53dcba57b2721bb9614662666d267318841f11d4b",
+      "config_version": "10.0.0",
+      "analysis": {
+        "eligible_objects": 14,
+        "duplicate_groups": 2,
+        "needs_review": 2,
+        "skipped_types": {},
+        "issues": 0
+      },
+      "replacement": {
+        "changed_lists": 0,
+        "replacements": 0,
+        "collapsed_members": 0,
+        "skipped": 0
+      },
+      "hierarchy_complete": true
+    },
+    {
+      "file": "panorama-8.0-merger.xml",
+      "upstream_path": "tests/input/panorama-8.0-merger.xml",
+      "sha256": "22d4fe072ca0fa6c35e6e2114860fdb8125d03557a1f63885dfaf694149507a8",
+      "config_version": "8.0.0",
+      "analysis": {
+        "eligible_objects": 14,
+        "duplicate_groups": 2,
+        "needs_review": 2,
+        "skipped_types": {},
+        "issues": 0
+      },
+      "replacement": {
+        "changed_lists": 0,
+        "replacements": 0,
+        "collapsed_members": 0,
+        "skipped": 0
+      },
+      "hierarchy_complete": true
+    },
+    {
+      "file": "panorama-8.0.xml",
+      "upstream_path": "tests/input/panorama-8.0.xml",
+      "sha256": "15322b6806e67764320c46f3bace74a6192a8fc84bdf468ae2beecc984c206da",
+      "config_version": "8.0.0",
+      "analysis": {
+        "eligible_objects": 10,
+        "duplicate_groups": 1,
+        "needs_review": 1,
+        "skipped_types": {},
+        "issues": 0
+      },
+      "replacement": {
+        "changed_lists": 0,
+        "replacements": 0,
+        "collapsed_members": 0,
+        "skipped": 0
+      },
+      "hierarchy_complete": true
+    },
+    {
+      "file": "panorama-8.1.xml",
+      "upstream_path": "tests/input/panorama-8.1.xml",
+      "sha256": "cf08269920cf2da37e7e6019b8e2ea8f4a97e0395d68779db71697830d876469",
+      "config_version": "8.1.0",
+      "analysis": {
+        "eligible_objects": 10,
+        "duplicate_groups": 1,
+        "needs_review": 1,
+        "skipped_types": {},
+        "issues": 0
+      },
+      "replacement": {
+        "changed_lists": 0,
+        "replacements": 0,
+        "collapsed_members": 0,
+        "skipped": 0
+      },
+      "hierarchy_complete": true
+    }
+  ],
+  "derived_case": {
+    "file": "derived-replacement-case.xml",
+    "base": "tests/input/panorama-10.0-merger.xml",
+    "changes": "Added two Shared IP objects, one testDG preferred IP object, appended coexistence group members, and replaced testDG Security source/destination sample members. Original upstream files are unmodified.",
+    "input_sha256": "94dbb3c036b739c55c5e0b382cc684d3f728f5e943fdeadb16b72f8955756068",
+    "analysis": {
+      "eligible_objects": 17,
+      "duplicate_groups": 2,
+      "needs_review": 0,
+      "skipped_types": {},
+      "issues": 0
+    },
+    "replacement": {
+      "changed_lists": 7,
+      "replacements": 14,
+      "collapsed_members": 8,
+      "skipped": 0
+    },
+    "second_run_byte_identical": true
+  },
+  "no_live_commit_test": true
+}

@@ -1,0 +1,630 @@
+{
+  "version": "2.1",
+  "input_sha256": "94dbb3c036b739c55c5e0b382cc684d3f728f5e943fdeadb16b72f8955756068",
+  "hierarchy_complete": true,
+  "changes": [
+    {
+      "scope": "shared",
+      "category": "static-address-group",
+      "owner": "group-with-duplicate-child",
+      "field": "static",
+      "before": [
+        "new test 1",
+        "new test 2",
+        "samplehost_1.1.1.1",
+        "svb_test_legacy"
+      ],
+      "after": [
+        "samplehost_1.1.1.1"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "new test 1",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "new test 2",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 3,
+          "old": "svb_test_legacy",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "collapse",
+          "member_index": 1,
+          "old": "new test 2",
+          "new": "samplehost_1.1.1.1"
+        },
+        {
+          "action": "collapse",
+          "member_index": 2,
+          "old": "samplehost_1.1.1.1",
+          "new": "samplehost_1.1.1.1"
+        },
+        {
+          "action": "collapse",
+          "member_index": 3,
+          "old": "svb_test_legacy",
+          "new": "samplehost_1.1.1.1"
+        }
+      ],
+      "checked_scopes": [
+        "shared",
+        "device-group:localhost.localdomain/Perimeter-FWs",
+        "device-group:localhost.localdomain/Datacenter-Firewalls",
+        "device-group:localhost.localdomain/FR Datacenter",
+        "device-group:localhost.localdomain/DE-Berlin Office",
+        "device-group:localhost.localdomain/testDG"
+      ]
+    },
+    {
+      "scope": "shared",
+      "category": "security",
+      "owner": "shared post rule 1",
+      "field": "post-rulebase/source",
+      "before": [
+        "Datacenter Subnet",
+        "new test 2"
+      ],
+      "after": [
+        "Datacenter Subnet",
+        "samplehost_1.1.1.1"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "new test 2",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        }
+      ],
+      "checked_scopes": [
+        "shared",
+        "device-group:localhost.localdomain/Perimeter-FWs",
+        "device-group:localhost.localdomain/Datacenter-Firewalls",
+        "device-group:localhost.localdomain/FR Datacenter",
+        "device-group:localhost.localdomain/DE-Berlin Office",
+        "device-group:localhost.localdomain/testDG"
+      ]
+    },
+    {
+      "scope": "device-group:localhost.localdomain/Datacenter-Firewalls",
+      "category": "static-address-group",
+      "owner": "group-with-duplicate-child",
+      "field": "static",
+      "before": [
+        "new test 1",
+        "new test 2"
+      ],
+      "after": [
+        "samplehost_1.1.1.1"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "new test 1",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "new test 2",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "collapse",
+          "member_index": 1,
+          "old": "new test 2",
+          "new": "samplehost_1.1.1.1"
+        }
+      ],
+      "checked_scopes": [
+        "device-group:localhost.localdomain/Datacenter-Firewalls",
+        "device-group:localhost.localdomain/FR Datacenter"
+      ]
+    },
+    {
+      "scope": "device-group:localhost.localdomain/testDG",
+      "category": "static-address-group",
+      "owner": "grp-test-1",
+      "field": "static",
+      "before": [
+        "test-addr1",
+        "test-addr2"
+      ],
+      "after": [
+        "samplehost_1.1.1.1",
+        "samplehost_1.1.1.2"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "test-addr1",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "test-addr2",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        }
+      ],
+      "checked_scopes": [
+        "device-group:localhost.localdomain/testDG"
+      ]
+    },
+    {
+      "scope": "device-group:localhost.localdomain/testDG",
+      "category": "static-address-group",
+      "owner": "grp-test-1-1",
+      "field": "static",
+      "before": [
+        "test-addr1",
+        "test-addr2"
+      ],
+      "after": [
+        "samplehost_1.1.1.1",
+        "samplehost_1.1.1.2"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "test-addr1",
+          "new": "samplehost_1.1.1.1",
+          "preferred_identity": [
+            "shared",
+            "samplehost_1.1.1.1"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "test-addr2",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        }
+      ],
+      "checked_scopes": [
+        "device-group:localhost.localdomain/testDG"
+      ]
+    },
+    {
+      "scope": "device-group:localhost.localdomain/testDG",
+      "category": "security",
+      "owner": "local dg",
+      "field": "pre-rulebase/source",
+      "before": [
+        "test-addr2",
+        "test-addr2-1",
+        "samplehost_1.1.1.2"
+      ],
+      "after": [
+        "samplehost_1.1.1.2"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "test-addr2",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "test-addr2-1",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        },
+        {
+          "action": "collapse",
+          "member_index": 1,
+          "old": "test-addr2-1",
+          "new": "samplehost_1.1.1.2"
+        },
+        {
+          "action": "collapse",
+          "member_index": 2,
+          "old": "samplehost_1.1.1.2",
+          "new": "samplehost_1.1.1.2"
+        }
+      ],
+      "checked_scopes": [
+        "device-group:localhost.localdomain/testDG"
+      ]
+    },
+    {
+      "scope": "device-group:localhost.localdomain/testDG",
+      "category": "security",
+      "owner": "local dg",
+      "field": "pre-rulebase/destination",
+      "before": [
+        "test-addr2",
+        "test-addr2-1",
+        "samplehost_1.1.1.2"
+      ],
+      "after": [
+        "samplehost_1.1.1.2"
+      ],
+      "events": [
+        {
+          "action": "replace",
+          "member_index": 0,
+          "old": "test-addr2",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        },
+        {
+          "action": "replace",
+          "member_index": 1,
+          "old": "test-addr2-1",
+          "new": "samplehost_1.1.1.2",
+          "preferred_identity": [
+            "device-group:localhost.localdomain/testDG",
+            "samplehost_1.1.1.2"
+          ]
+        },
+        {
+          "action": "collapse",
+          "member_index": 1,
+          "old": "test-addr2-1",
+          "new": "samplehost_1.1.1.2"
+        },
+        {
+          "action": "collapse",
+          "member_index": 2,
+          "old": "samplehost_1.1.1.2",
+          "new": "samplehost_1.1.1.2"
+        }
+      ],
+      "checked_scopes": [
+        "device-group:localhost.localdomain/testDG"
+      ]
+    }
+  ],
+  "skipped": [],
+  "occurrences": [
+    {
+      "path": "/config/shared/address/entry[@name='new test 1']",
+      "location": "@name",
+      "name": "new test 1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/shared/address/entry[@name='new test 2']",
+      "location": "@name",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/shared/address/entry[@name='another object']",
+      "location": "@name",
+      "name": "another object",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/shared/address/entry[@name='samplehost_1.1.1.1']",
+      "location": "@name",
+      "name": "samplehost_1.1.1.1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/shared/address/entry[@name='svb_test_legacy']",
+      "location": "@name",
+      "name": "svb_test_legacy",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/shared/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "new test 1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/shared/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/shared/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "samplehost_1.1.1.1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/shared/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "svb_test_legacy",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/shared/post-rulebase/security/rules/entry[@name='shared post rule 1']/source/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Datacenter-Firewalls']/address/entry[@name='new test 1']",
+      "location": "@name",
+      "name": "new test 1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Datacenter-Firewalls']/address/entry[@name='new test 2']",
+      "location": "@name",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Datacenter-Firewalls']/pre-rulebase/authentication/rules/entry[@name='DC Firewall level CP rules 1']/source/member",
+      "location": "text",
+      "name": "new test 1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Datacenter-Firewalls']/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "new test 1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Datacenter-Firewalls']/address-group/entry[@name='group-with-duplicate-child']/static/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test']/source-translation/static-ip/translated-address",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test']/source/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test']/destination/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test']/destination-translation/translated-address",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1']/source-translation/dynamic-ip/translated-address/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1']/source/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1']/destination/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1']/destination-translation/translated-address",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1']/source-translation/dynamic-ip-and-port/translated-address/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1']/source/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1']/destination/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1']/destination-translation/translated-address",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1-1']/source-translation/dynamic-ip-and-port/translated-address/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1-1']/source/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1-1']/destination/member",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='DE-Berlin Office']/pre-rulebase/nat/rules/entry[@name='test-1-1-1']/destination-translation/translated-address",
+      "location": "text",
+      "name": "new test 2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/source/member",
+      "location": "text",
+      "name": "test-addr2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/source/member",
+      "location": "text",
+      "name": "test-addr2-1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/source/member",
+      "location": "text",
+      "name": "samplehost_1.1.1.2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/destination/member",
+      "location": "text",
+      "name": "test-addr2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/destination/member",
+      "location": "text",
+      "name": "test-addr2-1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/pre-rulebase/security/rules/entry[@name='local dg']/destination/member",
+      "location": "text",
+      "name": "samplehost_1.1.1.2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address/entry[@name='test-addr1']",
+      "location": "@name",
+      "name": "test-addr1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address/entry[@name='test-addr2']",
+      "location": "@name",
+      "name": "test-addr2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address/entry[@name='test-addr1-1']",
+      "location": "@name",
+      "name": "test-addr1-1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address/entry[@name='test-addr2-1']",
+      "location": "@name",
+      "name": "test-addr2-1",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address/entry[@name='samplehost_1.1.1.2']",
+      "location": "@name",
+      "name": "samplehost_1.1.1.2",
+      "classification": "outside_modification_scope"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address-group/entry[@name='grp-test-1']/static/member",
+      "location": "text",
+      "name": "test-addr1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address-group/entry[@name='grp-test-1']/static/member",
+      "location": "text",
+      "name": "test-addr2",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address-group/entry[@name='grp-test-1-1']/static/member",
+      "location": "text",
+      "name": "test-addr1",
+      "classification": "allowed_member"
+    },
+    {
+      "path": "/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='testDG']/address-group/entry[@name='grp-test-1-1']/static/member",
+      "location": "text",
+      "name": "test-addr2",
+      "classification": "allowed_member"
+    }
+  ],
+  "validation": {
+    "outside_target_lists_unchanged": true,
+    "all_address_definitions_retained": true,
+    "xml_reparsed": true
+  },
+  "output_sha256": "7d7fe3748d4c5d3f688991cdcc8a8c8dd0b11bce4a82af85d6a300c03bad0c49",
+  "summary": {
+    "changed_lists": 7,
+    "replacements": 14,
+    "collapsed_members": 8,
+    "skipped": 0
+  }
+}
